@@ -30,6 +30,10 @@ class TitleCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         posterImage.frame = contentView.bounds
+        posterImage.layer.cornerRadius = 12
+        posterImage.clipsToBounds = true
+        posterImage.layer.borderColor = UIColor.white.cgColor
+        posterImage.layer.borderWidth = 0.1
     }
     
     public func configure(with model: String){

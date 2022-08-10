@@ -10,6 +10,17 @@
 		156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */; };
 		156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */; };
 		15C173ED28A12F8C00C9020C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C173EC28A12F8C00C9020C /* images.xcassets */; };
+		15C3774B28A2653400382408 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774A28A2653400382408 /* SignUpVC.swift */; };
+		15C3774D28A26B7600382408 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774C28A26B7600382408 /* AuthVC.swift */; };
+		15C3775028A26BF000382408 /* UIButton + Extns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774F28A26BF000382408 /* UIButton + Extns.swift */; };
+		15C3775228A26D7800382408 /* UIFont + Exnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775128A26D7800382408 /* UIFont + Exnts.swift */; };
+		15C3775428A26E7100382408 /* UIColor + Extns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775328A26E7100382408 /* UIColor + Extns.swift */; };
+		15C3775628A26EF500382408 /* UILabel + Extns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775528A26EF500382408 /* UILabel + Extns.swift */; };
+		15C3775828A26F1400382408 /* UIImageView + Exnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775728A26F1400382408 /* UIImageView + Exnts.swift */; };
+		15C3775A28A27A3200382408 /* OneLineTextField + Extns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775928A27A3200382408 /* OneLineTextField + Extns.swift */; };
+		15C3775C28A28A7F00382408 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775B28A28A7F00382408 /* LoginVC.swift */; };
+		15C3775E28A291FF00382408 /* SetupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3775D28A291FF00382408 /* SetupProfileVC.swift */; };
+		15C3776128A29D4500382408 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3776028A29D4500382408 /* AddPhotoView.swift */; };
 		15DB24F5289EC68C001385E8 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DB24F4289EC68C001385E8 /* Genres.swift */; };
 		15DB24F7289EDE84001385E8 /* GenresCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DB24F6289EDE84001385E8 /* GenresCollection.swift */; };
 		15F63291289943BD002B369D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63290289943BD002B369D /* AppDelegate.swift */; };
@@ -39,6 +50,17 @@
 		156E9AE7289BF75700D290EC /* NetflixAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixAppModel.xcdatamodel; sourceTree = "<group>"; };
 		156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		15C173EC28A12F8C00C9020C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		15C3774A28A2653400382408 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		15C3774C28A26B7600382408 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		15C3774F28A26BF000382408 /* UIButton + Extns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extns.swift"; sourceTree = "<group>"; };
+		15C3775128A26D7800382408 /* UIFont + Exnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Exnts.swift"; sourceTree = "<group>"; };
+		15C3775328A26E7100382408 /* UIColor + Extns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extns.swift"; sourceTree = "<group>"; };
+		15C3775528A26EF500382408 /* UILabel + Extns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extns.swift"; sourceTree = "<group>"; };
+		15C3775728A26F1400382408 /* UIImageView + Exnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Exnts.swift"; sourceTree = "<group>"; };
+		15C3775928A27A3200382408 /* OneLineTextField + Extns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OneLineTextField + Extns.swift"; sourceTree = "<group>"; };
+		15C3775B28A28A7F00382408 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		15C3775D28A291FF00382408 /* SetupProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileVC.swift; sourceTree = "<group>"; };
+		15C3776028A29D4500382408 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		15DB24F4289EC68C001385E8 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		15DB24F6289EDE84001385E8 /* GenresCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCollection.swift; sourceTree = "<group>"; };
 		15F6328D289943BD002B369D /* NetfixApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetfixApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +102,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		159C3AFD28A1554E00263B33 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15C3775F28A29D3500382408 /* CustomView */,
+				15C3774E28A26BC700382408 /* Extentions */,
+				15C3774C28A26B7600382408 /* AuthVC.swift */,
+				15C3774A28A2653400382408 /* SignUpVC.swift */,
+				15C3775B28A28A7F00382408 /* LoginVC.swift */,
+				15C3775D28A291FF00382408 /* SetupProfileVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		15C3774E28A26BC700382408 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				15C3774F28A26BF000382408 /* UIButton + Extns.swift */,
+				15C3775128A26D7800382408 /* UIFont + Exnts.swift */,
+				15C3775328A26E7100382408 /* UIColor + Extns.swift */,
+				15C3775528A26EF500382408 /* UILabel + Extns.swift */,
+				15C3775728A26F1400382408 /* UIImageView + Exnts.swift */,
+				15C3775928A27A3200382408 /* OneLineTextField + Extns.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		15C3775F28A29D3500382408 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				15C3776028A29D4500382408 /* AddPhotoView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		15F63284289943BD002B369D = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +175,7 @@
 		15F632A42899469F002B369D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				159C3AFD28A1554E00263B33 /* Login */,
 				15F632CD289AFA54002B369D /* General */,
 				15F632CC289AFA3E002B369D /* Core */,
 			);
@@ -326,15 +383,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C3774D28A26B7600382408 /* AuthVC.swift in Sources */,
 				15F632C7289ABB59002B369D /* TitleTableViewCell.swift in Sources */,
 				15F632CB289AF7DD002B369D /* SearchResultsVC.swift in Sources */,
+				15C3775A28A27A3200382408 /* OneLineTextField + Extns.swift in Sources */,
 				15F632AA28994738002B369D /* SearchVC.swift in Sources */,
+				15C3775028A26BF000382408 /* UIButton + Extns.swift in Sources */,
+				15C3775828A26F1400382408 /* UIImageView + Exnts.swift in Sources */,
 				156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */,
 				15F632C1289A8D22002B369D /* TitleCollectionViewCell.swift in Sources */,
 				156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */,
 				15F632BB289A819C002B369D /* Title.swift in Sources */,
+				15C3775428A26E7100382408 /* UIColor + Extns.swift in Sources */,
+				15C3775228A26D7800382408 /* UIFont + Exnts.swift in Sources */,
 				15F63295289943BD002B369D /* MainTabBarVC.swift in Sources */,
 				15F632B52899604D002B369D /* CollectionViewTableViewCell.swift in Sources */,
+				15C3775628A26EF500382408 /* UILabel + Extns.swift in Sources */,
 				15F632A6289946C5002B369D /* HomeVC.swift in Sources */,
 				15F632B72899690A002B369D /* HeroHeaderView.swift in Sources */,
 				15F63291289943BD002B369D /* AppDelegate.swift in Sources */,
@@ -342,8 +406,12 @@
 				15F632CF289B9AAC002B369D /* YoutubeSearchResponse.swift in Sources */,
 				15F632D1289B9D6D002B369D /* TitlePreviewVC.swift in Sources */,
 				15DB24F5289EC68C001385E8 /* Genres.swift in Sources */,
+				15C3774B28A2653400382408 /* SignUpVC.swift in Sources */,
 				15F632D3289BA03A002B369D /* TitlePreviewViewModel.swift in Sources */,
+				15C3776128A29D4500382408 /* AddPhotoView.swift in Sources */,
 				15F632BD289A864D002B369D /* Extentions.swift in Sources */,
+				15C3775C28A28A7F00382408 /* LoginVC.swift in Sources */,
+				15C3775E28A291FF00382408 /* SetupProfileVC.swift in Sources */,
 				15DB24F7289EDE84001385E8 /* GenresCollection.swift in Sources */,
 				15F632A8289946FD002B369D /* UpcomingVC.swift in Sources */,
 				15F63293289943BD002B369D /* SceneDelegate.swift in Sources */,

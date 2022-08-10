@@ -42,8 +42,8 @@ class HomeVC: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
-            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(showLoginVc)),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done,target: self,action: nil)
         ]
         navigationController?.navigationBar.tintColor = .white
     }
@@ -51,6 +51,11 @@ class HomeVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+    }
+    
+    @objc func showLoginVc(){
+        let vc = AuthVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureHeroHeaderView(){
