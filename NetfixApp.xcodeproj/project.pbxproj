@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154B486728A3C22500C2673F /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486628A3C22500C2673F /* ProfileScreenVC.swift */; };
+		154B486928A3C91900C2673F /* FavoritesMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486828A3C91900C2673F /* FavoritesMovieCell.swift */; };
+		154B486B28A3D27E00C2673F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 154B486A28A3D27E00C2673F /* GoogleService-Info.plist */; };
 		156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */; };
 		156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */; };
 		15C173ED28A12F8C00C9020C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C173EC28A12F8C00C9020C /* images.xcassets */; };
@@ -47,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154B486628A3C22500C2673F /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
+		154B486828A3C91900C2673F /* FavoritesMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMovieCell.swift; sourceTree = "<group>"; };
+		154B486A28A3D27E00C2673F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/sarap005931/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		156E9AE7289BF75700D290EC /* NetflixAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixAppModel.xcdatamodel; sourceTree = "<group>"; };
 		156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		15C173EC28A12F8C00C9020C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				15C3774A28A2653400382408 /* SignUpVC.swift */,
 				15C3775B28A28A7F00382408 /* LoginVC.swift */,
 				15C3775D28A291FF00382408 /* SetupProfileVC.swift */,
+				154B486628A3C22500C2673F /* ProfileScreenVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 		15C3774E28A26BC700382408 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				15F632BC289A864D002B369D /* Extentions.swift */,
 				15C3774F28A26BF000382408 /* UIButton + Extns.swift */,
 				15C3775128A26D7800382408 /* UIFont + Exnts.swift */,
 				15C3775328A26E7100382408 /* UIColor + Extns.swift */,
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				15C3776028A29D4500382408 /* AddPhotoView.swift */,
+				154B486828A3C91900C2673F /* FavoritesMovieCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -166,6 +175,7 @@
 				15F63294289943BD002B369D /* MainTabBarVC.swift */,
 				15F6329B289943C0002B369D /* LaunchScreen.storyboard */,
 				15F6329E289943C0002B369D /* Info.plist */,
+				154B486A28A3D27E00C2673F /* GoogleService-Info.plist */,
 				15C173EC28A12F8C00C9020C /* images.xcassets */,
 				156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */,
 			);
@@ -187,7 +197,6 @@
 			children = (
 				15F63290289943BD002B369D /* AppDelegate.swift */,
 				15F63292289943BD002B369D /* SceneDelegate.swift */,
-				15F632BC289A864D002B369D /* Extentions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 			files = (
 				15C173ED28A12F8C00C9020C /* images.xcassets in Resources */,
 				15F6329D289943C0002B369D /* LaunchScreen.storyboard in Resources */,
+				154B486B28A3D27E00C2673F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +402,8 @@
 				15C3775828A26F1400382408 /* UIImageView + Exnts.swift in Sources */,
 				156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */,
 				15F632C1289A8D22002B369D /* TitleCollectionViewCell.swift in Sources */,
+				154B486728A3C22500C2673F /* ProfileScreenVC.swift in Sources */,
+				154B486928A3C91900C2673F /* FavoritesMovieCell.swift in Sources */,
 				156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */,
 				15F632BB289A819C002B369D /* Title.swift in Sources */,
 				15C3775428A26E7100382408 /* UIColor + Extns.swift in Sources */,

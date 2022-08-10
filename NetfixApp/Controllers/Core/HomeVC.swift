@@ -43,7 +43,7 @@ class HomeVC: UIViewController {
         
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(showLoginVc)),
-            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done,target: self,action: nil)
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done,target: self,action: #selector(showProfileScreen))
         ]
         navigationController?.navigationBar.tintColor = .white
     }
@@ -55,6 +55,11 @@ class HomeVC: UIViewController {
     
     @objc func showLoginVc(){
         let vc = AuthVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func showProfileScreen(){
+        let vc = ProfileScreenVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
