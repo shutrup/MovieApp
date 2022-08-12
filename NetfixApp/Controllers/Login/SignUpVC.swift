@@ -23,10 +23,34 @@ class SignUpVC: UIViewController {
     let signButton = UIButton(title: "Sign up", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     let loginButton = UIButton()
     
+    weak var delegate: AuthNavDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        
+        signButton.addTarget(self, action: #selector(signInButtonTap), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
+    }
+    
+    @objc func signInButtonTap(){
+        AuthService.shared.register(email: emailTF.text, password: passwordTF.text, confirmPassword: confirmPasswordTF.text) { [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case.success(let user):
+                self.showAlert(with: "Успешно", and: "Вы зарегистрированы!") {
+                    self.present(SetupProfileVC(currentUser: user), animated: true)
+                }
+                
+            case.failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc func loginButtonTap(){
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
     }
     
     private func initView(){
@@ -104,5 +128,19 @@ class SignUpVC: UIViewController {
             make.top.equalTo(signButton.snp.bottom).offset(54)
             make.left.equalTo(alreadyOnboardLabel.snp.right).offset(3)
         }
+    }
+}
+
+extension UIViewController{
+    func showAlert(with title: String, and message: String, completion: @escaping () -> Void = {}){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
 }

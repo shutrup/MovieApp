@@ -18,7 +18,9 @@ class AuthVC: UIViewController {
     
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroungColor:  UIColor(hexString: "#333333"), font: .avenir20(), isShadow: true, cornerRadius: 4)
-    let loginButton = UIButton(title: "Login", titleColor: UIColor(hexString: "#D0021B"), backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
+    let loginButton = UIButton(title: "Войти", titleColor: UIColor(hexString: "#D0021B"), backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
+    let signUpVC = SignUpVC()
+    let loginVC = LoginVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,10 @@ class AuthVC: UIViewController {
         emailButton.customizeEmailButton()
         emailButton.addTarget(self, action: #selector(showEmail), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(showLogin), for: .touchUpInside)
+        
+        signUpVC.delegate = self
+        loginVC.delegate = self
+        
     }
     
     private func initView(){
@@ -87,13 +93,21 @@ class AuthVC: UIViewController {
     }
     
     @objc func showEmail(){
-        let vc = SignUpVC()
-        present(vc, animated: true)
+       
+        present(signUpVC, animated: true)
     }
     
     @objc func showLogin(){
-        let vc = LoginVC()
-        present(vc, animated: true)
+        present(loginVC, animated: true)
     }
 }
 
+extension AuthVC: AuthNavDelegate {
+    func toLoginVC() {
+        present(loginVC, animated: true)
+    }
+    
+    func toSignUpVC() {
+        present(signUpVC, animated: true)
+    }
+}

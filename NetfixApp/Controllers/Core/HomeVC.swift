@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeVC: UIViewController {
     
     private var randomSelectedMovie: Title?
     private var headerView: HeroHeaderView?
     
-    private let sectionTitles: [String] = ["Популярные фильмы", "Популярные шоу", "Популярные","Предстоящие фильмы", "Самые популярные"]
+    private let sectionTitles: [String] = ["Популярные фильмы", "Популярные сериалы", "Популярные","Предстоящие фильмы", "Самые популярные"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -42,8 +43,8 @@ class HomeVC: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(showLoginVc)),
-            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done,target: self,action: #selector(showProfileScreen))
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(showProfileScreen)),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done,target: self,action: nil)
         ]
         navigationController?.navigationBar.tintColor = .white
     }
@@ -59,8 +60,19 @@ class HomeVC: UIViewController {
     }
     
     @objc func showProfileScreen(){
-        let vc = ProfileScreenVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let user = Auth.auth().currentUser {
+            FirestoreService.shared.getUserData(user: user) { result in
+                switch result {
+                case .success(let users):
+                    let vc = ProfileScreenVC(currentUser: users)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }else {
+            return
+        }
     }
     
     private func configureHeroHeaderView(){

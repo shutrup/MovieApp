@@ -8,7 +8,17 @@
 import UIKit
 
 class MainTabBarVC: UITabBarController {
-
+    private let currentUser: Users
+    
+    init(current: Users){
+        self.currentUser = current
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow

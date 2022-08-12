@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class ProfileScreenVC: UIViewController {
     
@@ -27,19 +28,43 @@ class ProfileScreenVC: UIViewController {
     }()
     
     let profileNameLabel = UILabel(text: "Name Name", textColor: .white, font: .avenir20()!)
-    let favoriteMovieLabel = UILabel(text: "Любимые фильмы:", textColor: .white, font: .avenir16()!)
+    let favoriteMovieLabel = UILabel(text: "Любимые фильмы:", textColor: .white, font: .avenir20()!)
     
-    let favoritesMovieCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(FavoritesMovieCell.self, forCellWithReuseIdentifier: FavoritesMovieCell.id)
-        return collection
-    }()
     
-    let movies: [String] = ["что то","что то","что то","что то","что то"]
+    private let currentUser: Users
+    
+    init(currentUser: Users){
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        profileNameLabel.text = currentUser.username
+        favoriteMovieLabel.text = currentUser.description
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Выйти", style: .plain, target: self, action: #selector(signOut))
+    }
+    
+    @objc private func signOut(){
+        let ac = UIAlertController(title: nil, message: "Вы точно хотите выйти?", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthVC()
+            }catch{
+                print("Error sign out")
+            }
+        }))
+        
+        present(ac, animated: true)
     }
     
     private func initView(){
@@ -48,9 +73,6 @@ class ProfileScreenVC: UIViewController {
         view.addSubview(profileImageView)
         view.addSubview(profileNameLabel)
         view.addSubview(favoriteMovieLabel)
-        view.addSubview(favoritesMovieCollection)
-        favoritesMovieCollection.delegate = self
-        favoritesMovieCollection.dataSource = self
         
         profileImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -70,39 +92,7 @@ class ProfileScreenVC: UIViewController {
             make.right.equalToSuperview().inset(50)
         }
         
-        favoritesMovieCollection.snp.makeConstraints { make in
-            make.top.equalTo(favoriteMovieLabel.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().inset(20)
-            make.height.equalTo(200)
-        }
         
     }
-    
-}
-
-extension ProfileScreenVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 20)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesMovieCell.id, for: indexPath) as? FavoritesMovieCell else { return UICollectionViewCell()}
-        cell.favoriteMovieName.text = movies[indexPath.row]
-        return cell
-    }
-    
     
 }

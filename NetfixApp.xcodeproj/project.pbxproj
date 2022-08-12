@@ -10,8 +10,14 @@
 		154B486728A3C22500C2673F /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486628A3C22500C2673F /* ProfileScreenVC.swift */; };
 		154B486928A3C91900C2673F /* FavoritesMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486828A3C91900C2673F /* FavoritesMovieCell.swift */; };
 		154B486B28A3D27E00C2673F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 154B486A28A3D27E00C2673F /* GoogleService-Info.plist */; };
+		154B486E28A432D100C2673F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486D28A432D000C2673F /* AuthService.swift */; };
+		154B487028A43DF700C2673F /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B486F28A43DF700C2673F /* Validators.swift */; };
+		154B487228A440D100C2673F /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B487128A440D100C2673F /* AuthError.swift */; };
 		156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */; };
 		156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */; };
+		158195DE28A51C920056FC02 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DD28A51C920056FC02 /* FirestoreService.swift */; };
+		158195E028A53F1F0056FC02 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DF28A53F1F0056FC02 /* UserError.swift */; };
+		158195E228A540050056FC02 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195E128A540050056FC02 /* Users.swift */; };
 		15C173ED28A12F8C00C9020C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C173EC28A12F8C00C9020C /* images.xcassets */; };
 		15C3774B28A2653400382408 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774A28A2653400382408 /* SignUpVC.swift */; };
 		15C3774D28A26B7600382408 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774C28A26B7600382408 /* AuthVC.swift */; };
@@ -53,8 +59,14 @@
 		154B486628A3C22500C2673F /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
 		154B486828A3C91900C2673F /* FavoritesMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMovieCell.swift; sourceTree = "<group>"; };
 		154B486A28A3D27E00C2673F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/sarap005931/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		154B486D28A432D000C2673F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		154B486F28A43DF700C2673F /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		154B487128A440D100C2673F /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		156E9AE7289BF75700D290EC /* NetflixAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixAppModel.xcdatamodel; sourceTree = "<group>"; };
 		156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
+		158195DD28A51C920056FC02 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		158195DF28A53F1F0056FC02 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		158195E128A540050056FC02 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		15C173EC28A12F8C00C9020C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		15C3774A28A2653400382408 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		15C3774C28A26B7600382408 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -108,6 +120,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154B486C28A4329000C2673F /* FirbaseService */ = {
+			isa = PBXGroup;
+			children = (
+				154B487328A443B000C2673F /* Helpers */,
+				154B486D28A432D000C2673F /* AuthService.swift */,
+				158195DD28A51C920056FC02 /* FirestoreService.swift */,
+			);
+			path = FirbaseService;
+			sourceTree = "<group>";
+		};
+		154B487328A443B000C2673F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				154B486F28A43DF700C2673F /* Validators.swift */,
+				154B487128A440D100C2673F /* AuthError.swift */,
+				158195DF28A53F1F0056FC02 /* UserError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		159C3AFD28A1554E00263B33 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +239,7 @@
 				15F632BA289A819C002B369D /* Title.swift */,
 				15F632CE289B9AAC002B369D /* YoutubeSearchResponse.swift */,
 				15DB24F4289EC68C001385E8 /* Genres.swift */,
+				158195E128A540050056FC02 /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +268,7 @@
 		15F632B328996003002B369D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				154B486C28A4329000C2673F /* FirbaseService */,
 				15F632B8289A54C1002B369D /* ApiCaller.swift */,
 				156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */,
 			);
@@ -414,15 +448,21 @@
 				15F632A6289946C5002B369D /* HomeVC.swift in Sources */,
 				15F632B72899690A002B369D /* HeroHeaderView.swift in Sources */,
 				15F63291289943BD002B369D /* AppDelegate.swift in Sources */,
+				158195E028A53F1F0056FC02 /* UserError.swift in Sources */,
+				158195DE28A51C920056FC02 /* FirestoreService.swift in Sources */,
+				154B487228A440D100C2673F /* AuthError.swift in Sources */,
 				15F632AC28994761002B369D /* DownloadsVC.swift in Sources */,
 				15F632CF289B9AAC002B369D /* YoutubeSearchResponse.swift in Sources */,
 				15F632D1289B9D6D002B369D /* TitlePreviewVC.swift in Sources */,
+				154B487028A43DF700C2673F /* Validators.swift in Sources */,
 				15DB24F5289EC68C001385E8 /* Genres.swift in Sources */,
 				15C3774B28A2653400382408 /* SignUpVC.swift in Sources */,
 				15F632D3289BA03A002B369D /* TitlePreviewViewModel.swift in Sources */,
 				15C3776128A29D4500382408 /* AddPhotoView.swift in Sources */,
 				15F632BD289A864D002B369D /* Extentions.swift in Sources */,
 				15C3775C28A28A7F00382408 /* LoginVC.swift in Sources */,
+				158195E228A540050056FC02 /* Users.swift in Sources */,
+				154B486E28A432D100C2673F /* AuthService.swift in Sources */,
 				15C3775E28A291FF00382408 /* SetupProfileVC.swift in Sources */,
 				15DB24F7289EDE84001385E8 /* GenresCollection.swift in Sources */,
 				15F632A8289946FD002B369D /* UpcomingVC.swift in Sources */,

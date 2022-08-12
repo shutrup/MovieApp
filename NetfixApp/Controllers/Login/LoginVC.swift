@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol AuthNavDelegate: AnyObject {
+    func toLoginVC()
+    func toSignUpVC()
+}
+
 class LoginVC: UIViewController {
     
     let welcomeLabel = UILabel(text: "Добро пожаловать!", textColor: .white, font: .avenir26()!)
@@ -23,22 +28,24 @@ class LoginVC: UIViewController {
     let passwordTF = OneLineTextField(font: .avenir20())
    
     
-    let loginButton = UIButton(title: "Sign up", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
+    let loginButton = UIButton(title: "Войти", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     let needAccountLabel = UILabel(text: "Не зарегистрированы?", textColor: .white, font: .avenir16()!)
     let signUpButton = UIButton()
 
+    weak var delegate: AuthNavDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         googleButton.customizeGoogleButton()
         loginButton.addTarget(self, action: #selector(showSetupProfile), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         
     }
     
     private func initView(){
         view.backgroundColor = .systemBackground
         
-        signUpButton.setTitle("Login", for: .normal)
+        signUpButton.setTitle("Sign Up", for: .normal)
         signUpButton.setTitleColor(.red, for: .normal)
         signUpButton.titleLabel?.font = .avenir16()
         
@@ -121,7 +128,33 @@ class LoginVC: UIViewController {
     }
     
     @objc func showSetupProfile(){
-        let vc = SetupProfileVC()
-        present(vc, animated: true)
+        AuthService.shared.login(email: emailTF.text, password: passwordTF.text) { [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case.success(let user):
+                self.showAlert(with: "Успешно", and: "Вы авторизованы!") {
+                    FirestoreService.shared.getUserData(user: user) { result in
+                        switch result{
+                        case .success(let users):
+                            let mainvc = MainTabBarVC(current: users)
+                            mainvc.modalPresentationStyle = .fullScreen
+                            self.present(mainvc, animated: true)
+                        case .failure(let error):
+                            self.present(SetupProfileVC(currentUser: user), animated: true)
+                            print(error)
+                        }
+                    }
+                   
+                }
+            case.failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc func signUpButtonTapped(){
+        dismiss(animated: true) {
+            self.delegate?.toSignUpVC()
+        }
     }
 }

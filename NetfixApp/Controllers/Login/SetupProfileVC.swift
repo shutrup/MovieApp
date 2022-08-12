@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SetupProfileVC: UIViewController {
     
@@ -18,6 +19,17 @@ class SetupProfileVC: UIViewController {
     
     let fillImageView = AddPhotoView()
     
+    private let currentUser: User
+    
+    init(currentUser: User){
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
@@ -26,8 +38,25 @@ class SetupProfileVC: UIViewController {
     
     private func initView(){
         view.backgroundColor = .systemBackground
-        
+        loginButton.addTarget(self, action: #selector(saveDataOnFirestore), for: .touchUpInside)
     }
+    
+    @objc private func saveDataOnFirestore(){
+        FirestoreService.shared.saveProfileWith(id: currentUser.uid, email: currentUser.email!, username: fullNameTF.text!, avatarImageString: "nil", description: favoriteMovieTF.text!) { result in
+            switch  result{
+            case .success(let users):
+                self.showAlert(with: "Успешно", and: "Данные сохранены)!") {
+                    let mainvc = MainTabBarVC(current: users)
+                    mainvc.modalPresentationStyle = .fullScreen
+                    self.present(mainvc, animated: true)
+                }
+                print(users.email)
+            case.failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
+        }
+    }
+    
     
 }
 
