@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import GoogleSignIn
+import Firebase
 
 class AuthVC: UIViewController {
 
@@ -34,6 +36,8 @@ class AuthVC: UIViewController {
         loginVC.delegate = self
         
     }
+    
+    
     
     private func initView(){
         view.backgroundColor = .systemBackground
@@ -111,3 +115,4 @@ extension AuthVC: AuthNavDelegate {
         present(signUpVC, animated: true)
     }
 }
+

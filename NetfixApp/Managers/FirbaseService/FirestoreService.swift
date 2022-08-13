@@ -7,6 +7,7 @@
 
 import Firebase
 import FirebaseFirestore
+import UIKit
 
 class FirestoreService{
     
@@ -17,22 +18,35 @@ class FirestoreService{
         return db.collection("users")
     }
     
-    func saveProfileWith(id: String, email: String, username: String, avatarImageString: String, description: String, completion: @escaping (Result<Users,Error>) ->Void){
+    func saveProfileWith(id: String, email: String, username: String, avatarImage: UIImage?, description: String, completion: @escaping (Result<Users,Error>) ->Void){
         guard Validators.isFilled(username: username, description: description) else {
             completion(.failure(UserError.notFilled))
             return
         }
         
-        let user = Users(username: username, email: email, avatarStringUrl: "", description: description, id: id)
+        guard avatarImage != UIImage(named: "person") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
         
-        self.usersRef.document(user.id).setData(user.representation) { error in
-            if let error = error {
+        var user = Users(username: username, email: email, avatarStringUrl: "not exist", description: description, id: id)
+        StorageService.shared.uploadPhoto(photo: avatarImage!) { result in
+            switch result {
+            case .success(let url):
+                user.avatarStringUrl = url.absoluteString
+                self.usersRef.document(user.id).setData(user.representation) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(user))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(user))
             }
         }
         
+                
     }
     
     func getUserData( user:User, completion: @escaping (Result<Users,Error>) ->Void){
