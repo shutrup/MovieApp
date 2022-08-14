@@ -63,8 +63,8 @@ class AuthService {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
         let config = GIDConfiguration(clientID: clientID)
-        let vc = AuthVC()
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: vc) {  user, error in
+
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: AppliactionUtility.rootViewController) {  user, error in
             if let error = error{
                 completion(.failure(error))
                 return
