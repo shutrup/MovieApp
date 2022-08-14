@@ -16,6 +16,7 @@
 		156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */; };
 		156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */; };
 		157D895928A9342400326497 /* AppliactionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D895828A9342400326497 /* AppliactionUtility.swift */; };
+		157D895B28A937BF00326497 /* UIAppliacation + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D895A28A937BF00326497 /* UIAppliacation + Extentions.swift */; };
 		158195DE28A51C920056FC02 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DD28A51C920056FC02 /* FirestoreService.swift */; };
 		158195E028A53F1F0056FC02 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DF28A53F1F0056FC02 /* UserError.swift */; };
 		158195E228A540050056FC02 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195E128A540050056FC02 /* Users.swift */; };
@@ -47,7 +48,7 @@
 		15F632B72899690A002B369D /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632B62899690A002B369D /* HeroHeaderView.swift */; };
 		15F632B9289A54C1002B369D /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632B8289A54C1002B369D /* ApiCaller.swift */; };
 		15F632BB289A819C002B369D /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632BA289A819C002B369D /* Title.swift */; };
-		15F632BD289A864D002B369D /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632BC289A864D002B369D /* Extentions.swift */; };
+		15F632BD289A864D002B369D /* String + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632BC289A864D002B369D /* String + Extentions.swift */; };
 		15F632C1289A8D22002B369D /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632C0289A8D22002B369D /* TitleCollectionViewCell.swift */; };
 		15F632C7289ABB59002B369D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632C6289ABB59002B369D /* TitleTableViewCell.swift */; };
 		15F632C9289ABDE2002B369D /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F632C8289ABDE2002B369D /* TitleViewModel.swift */; };
@@ -68,6 +69,7 @@
 		156E9AE7289BF75700D290EC /* NetflixAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixAppModel.xcdatamodel; sourceTree = "<group>"; };
 		156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		157D895828A9342400326497 /* AppliactionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliactionUtility.swift; sourceTree = "<group>"; };
+		157D895A28A937BF00326497 /* UIAppliacation + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAppliacation + Extentions.swift"; sourceTree = "<group>"; };
 		158195DD28A51C920056FC02 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		158195DF28A53F1F0056FC02 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		158195E128A540050056FC02 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		15F632B62899690A002B369D /* HeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		15F632B8289A54C1002B369D /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		15F632BA289A819C002B369D /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
-		15F632BC289A864D002B369D /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		15F632BC289A864D002B369D /* String + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extentions.swift"; sourceTree = "<group>"; };
 		15F632C0289A8D22002B369D /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		15F632C6289ABB59002B369D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		15F632C8289ABDE2002B369D /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 		15C3774E28A26BC700382408 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				15F632BC289A864D002B369D /* Extentions.swift */,
+				15F632BC289A864D002B369D /* String + Extentions.swift */,
 				15C3774F28A26BF000382408 /* UIButton + Extns.swift */,
 				15C3775128A26D7800382408 /* UIFont + Exnts.swift */,
 				15C3775328A26E7100382408 /* UIColor + Extns.swift */,
@@ -173,6 +175,7 @@
 				15C3775728A26F1400382408 /* UIImageView + Exnts.swift */,
 				15C3775928A27A3200382408 /* OneLineTextField + Extns.swift */,
 				158195E528A687860056FC02 /* UIImage + Extentions.swift */,
+				157D895A28A937BF00326497 /* UIAppliacation + Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -463,13 +466,14 @@
 				15F632AC28994761002B369D /* DownloadsVC.swift in Sources */,
 				157D895928A9342400326497 /* AppliactionUtility.swift in Sources */,
 				15F632CF289B9AAC002B369D /* YoutubeSearchResponse.swift in Sources */,
+				157D895B28A937BF00326497 /* UIAppliacation + Extentions.swift in Sources */,
 				15F632D1289B9D6D002B369D /* TitlePreviewVC.swift in Sources */,
 				154B487028A43DF700C2673F /* Validators.swift in Sources */,
 				15DB24F5289EC68C001385E8 /* Genres.swift in Sources */,
 				15C3774B28A2653400382408 /* SignUpVC.swift in Sources */,
 				15F632D3289BA03A002B369D /* TitlePreviewViewModel.swift in Sources */,
 				15C3776128A29D4500382408 /* AddPhotoView.swift in Sources */,
-				15F632BD289A864D002B369D /* Extentions.swift in Sources */,
+				15F632BD289A864D002B369D /* String + Extentions.swift in Sources */,
 				15C3775C28A28A7F00382408 /* LoginVC.swift in Sources */,
 				158195E228A540050056FC02 /* Users.swift in Sources */,
 				154B486E28A432D100C2673F /* AuthService.swift in Sources */,

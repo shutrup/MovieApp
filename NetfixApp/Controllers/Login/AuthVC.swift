@@ -39,21 +39,21 @@ class AuthVC: UIViewController {
         
     }
     
-    @objc private func googleButtonTapped(){
+    @objc public func googleButtonTapped(){
         AuthService.shared.googleLogin { result in
             switch result {
             case .success(let user):
                 FirestoreService.shared.getUserData(user: user) { result in
                     switch result {
                     case .success(let users):
-                        self.showAlert(with: "Успешно ", and: "Вы авторизованы!") {
+                        UIApplication.getTopViewController()!.showAlert(with: "Успешно ", and: "Вы авторизованы!") {
                             let mainTabBar = MainTabBarVC(current:users)
                             mainTabBar.modalPresentationStyle = .fullScreen
-                            self.present(mainTabBar, animated: true)
+                            UIApplication.getTopViewController()!.present(mainTabBar, animated: true)
                         }
                     case .failure(_):
-                        self.showAlert(with: "Успешно ", and: "Вы зарегистрированы!") {
-                            self.present(SetupProfileVC(currentUser: user), animated: true)
+                        UIApplication.getTopViewController()!.showAlert(with: "Успешно ", and: "Вы зарегистрированы!") {
+                            UIApplication.getTopViewController()!.present(SetupProfileVC(currentUser: user), animated: true)
                         }
                     }
                 }

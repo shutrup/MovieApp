@@ -31,6 +31,8 @@ class LoginVC: UIViewController {
     let loginButton = UIButton(title: "Войти", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     let needAccountLabel = UILabel(text: "Не зарегистрированы?", textColor: .white, font: .avenir16()!)
     let signUpButton = UIButton()
+    
+
 
     weak var delegate: AuthNavDelegate?
     override func viewDidLoad() {
@@ -39,6 +41,7 @@ class LoginVC: UIViewController {
         googleButton.customizeGoogleButton()
         loginButton.addTarget(self, action: #selector(showSetupProfile), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        
         
     }
     
