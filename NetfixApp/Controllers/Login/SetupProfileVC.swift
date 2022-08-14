@@ -13,8 +13,8 @@ class SetupProfileVC: UIViewController {
     let setUpProfileLabel = UILabel(text: "Настройка профиля!", textColor: .white, font: .avenir26()!)
     let fullNameLabel = UILabel(text: "Полное имя", textColor: .white, font: .avenir20()!)
     let favoriteMovieLabel = UILabel(text: "Любимые фильмы", textColor: .white, font: .avenir20()!)
-    let fullNameTF = OneLineTextField(font: .avenir20())
-    let favoriteMovieTF = OneLineTextField(font: .avenir20())
+    let fullNameTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
+    let favoriteMovieTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
     let loginButton = UIButton(title: "Сохранить", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     
     let fillImageView = AddPhotoView()
