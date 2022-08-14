@@ -16,9 +16,9 @@ class SignUpVC: UIViewController {
     let confirPasswordLabel = UILabel(text: "Подвердить пароль", textColor: .white, font: .avenir20()!)
     let alreadyOnboardLabel = UILabel(text: "Уже зарегистрированы?", textColor: .white, font: .avenir16()!)
     
-    let emailTF = OneLineTextField(font: .avenir20())
-    let passwordTF = OneLineTextField(font: .avenir20())
-    let confirmPasswordTF = OneLineTextField(font: .avenir20())
+    let emailTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
+    let passwordTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: true)
+    let confirmPasswordTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: true)
     
     let signButton = UIButton(title: "Sign up", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     let loginButton = UIButton()

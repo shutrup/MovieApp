@@ -24,8 +24,8 @@ class LoginVC: UIViewController {
     let emailLabel = UILabel(text: "Email", textColor: .white, font: .avenir20()!)
     let passwordLabel = UILabel(text: "Пароль", textColor: .white, font: .avenir20()!)
     
-    let emailTF = OneLineTextField(font: .avenir20())
-    let passwordTF = OneLineTextField(font: .avenir20())
+    let emailTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
+    let passwordTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: true)
    
     
     let loginButton = UIButton(title: "Войти", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)

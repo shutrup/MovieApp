@@ -15,9 +15,12 @@
 		154B487228A440D100C2673F /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B487128A440D100C2673F /* AuthError.swift */; };
 		156E9AE8289BF75700D290EC /* NetflixAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE6289BF75700D290EC /* NetflixAppModel.xcdatamodeld */; };
 		156E9AEA289BF94700D290EC /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */; };
+		157D895928A9342400326497 /* AppliactionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D895828A9342400326497 /* AppliactionUtility.swift */; };
 		158195DE28A51C920056FC02 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DD28A51C920056FC02 /* FirestoreService.swift */; };
 		158195E028A53F1F0056FC02 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195DF28A53F1F0056FC02 /* UserError.swift */; };
 		158195E228A540050056FC02 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195E128A540050056FC02 /* Users.swift */; };
+		158195E428A6841E0056FC02 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195E328A6841E0056FC02 /* StorageService.swift */; };
+		158195E628A687860056FC02 /* UIImage + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158195E528A687860056FC02 /* UIImage + Extentions.swift */; };
 		15C173ED28A12F8C00C9020C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C173EC28A12F8C00C9020C /* images.xcassets */; };
 		15C3774B28A2653400382408 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774A28A2653400382408 /* SignUpVC.swift */; };
 		15C3774D28A26B7600382408 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3774C28A26B7600382408 /* AuthVC.swift */; };
@@ -64,9 +67,12 @@
 		154B487128A440D100C2673F /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		156E9AE7289BF75700D290EC /* NetflixAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixAppModel.xcdatamodel; sourceTree = "<group>"; };
 		156E9AE9289BF94700D290EC /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
+		157D895828A9342400326497 /* AppliactionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliactionUtility.swift; sourceTree = "<group>"; };
 		158195DD28A51C920056FC02 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		158195DF28A53F1F0056FC02 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		158195E128A540050056FC02 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		158195E328A6841E0056FC02 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		158195E528A687860056FC02 /* UIImage + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extentions.swift"; sourceTree = "<group>"; };
 		15C173EC28A12F8C00C9020C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		15C3774A28A2653400382408 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		15C3774C28A26B7600382408 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				154B487328A443B000C2673F /* Helpers */,
 				154B486D28A432D000C2673F /* AuthService.swift */,
 				158195DD28A51C920056FC02 /* FirestoreService.swift */,
+				158195E328A6841E0056FC02 /* StorageService.swift */,
 			);
 			path = FirbaseService;
 			sourceTree = "<group>";
@@ -136,6 +143,7 @@
 				154B486F28A43DF700C2673F /* Validators.swift */,
 				154B487128A440D100C2673F /* AuthError.swift */,
 				158195DF28A53F1F0056FC02 /* UserError.swift */,
+				157D895828A9342400326497 /* AppliactionUtility.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				15C3775528A26EF500382408 /* UILabel + Extns.swift */,
 				15C3775728A26F1400382408 /* UIImageView + Exnts.swift */,
 				15C3775928A27A3200382408 /* OneLineTextField + Extns.swift */,
+				158195E528A687860056FC02 /* UIImage + Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -452,6 +461,7 @@
 				158195DE28A51C920056FC02 /* FirestoreService.swift in Sources */,
 				154B487228A440D100C2673F /* AuthError.swift in Sources */,
 				15F632AC28994761002B369D /* DownloadsVC.swift in Sources */,
+				157D895928A9342400326497 /* AppliactionUtility.swift in Sources */,
 				15F632CF289B9AAC002B369D /* YoutubeSearchResponse.swift in Sources */,
 				15F632D1289B9D6D002B369D /* TitlePreviewVC.swift in Sources */,
 				154B487028A43DF700C2673F /* Validators.swift in Sources */,
@@ -465,6 +475,8 @@
 				154B486E28A432D100C2673F /* AuthService.swift in Sources */,
 				15C3775E28A291FF00382408 /* SetupProfileVC.swift in Sources */,
 				15DB24F7289EDE84001385E8 /* GenresCollection.swift in Sources */,
+				158195E628A687860056FC02 /* UIImage + Extentions.swift in Sources */,
+				158195E428A6841E0056FC02 /* StorageService.swift in Sources */,
 				15F632A8289946FD002B369D /* UpcomingVC.swift in Sources */,
 				15F63293289943BD002B369D /* SceneDelegate.swift in Sources */,
 				15F632B9289A54C1002B369D /* ApiCaller.swift in Sources */,

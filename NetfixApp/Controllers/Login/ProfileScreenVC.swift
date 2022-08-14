@@ -38,6 +38,9 @@ class ProfileScreenVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
         profileNameLabel.text = currentUser.username
         favoriteMovieLabel.text = currentUser.description
+        guard let imageUrl = URL(string: currentUser.avatarStringUrl) else {return}
+        print(imageUrl)
+        profileImageView.sd_setImage(with: imageUrl)
     }
     
     required init?(coder: NSCoder) {

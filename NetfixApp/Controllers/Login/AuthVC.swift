@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import GoogleSignIn
+import Firebase
 
 class AuthVC: UIViewController {
 
@@ -29,10 +31,36 @@ class AuthVC: UIViewController {
         emailButton.customizeEmailButton()
         emailButton.addTarget(self, action: #selector(showEmail), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(showLogin), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+        
         
         signUpVC.delegate = self
         loginVC.delegate = self
         
+    }
+    
+    @objc private func googleButtonTapped(){
+        AuthService.shared.googleLogin { result in
+            switch result {
+            case .success(let user):
+                FirestoreService.shared.getUserData(user: user) { result in
+                    switch result {
+                    case .success(let users):
+                        self.showAlert(with: "Успешно ", and: "Вы авторизованы!") {
+                            let mainTabBar = MainTabBarVC(current:users)
+                            mainTabBar.modalPresentationStyle = .fullScreen
+                            self.present(mainTabBar, animated: true)
+                        }
+                    case .failure(_):
+                        self.showAlert(with: "Успешно ", and: "Вы зарегистрированы!") {
+                            self.present(SetupProfileVC(currentUser: user), animated: true)
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
+        }
     }
     
     private func initView(){

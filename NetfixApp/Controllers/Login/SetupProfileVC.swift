@@ -13,8 +13,8 @@ class SetupProfileVC: UIViewController {
     let setUpProfileLabel = UILabel(text: "Настройка профиля!", textColor: .white, font: .avenir26()!)
     let fullNameLabel = UILabel(text: "Полное имя", textColor: .white, font: .avenir20()!)
     let favoriteMovieLabel = UILabel(text: "Любимые фильмы", textColor: .white, font: .avenir20()!)
-    let fullNameTF = OneLineTextField(font: .avenir20())
-    let favoriteMovieTF = OneLineTextField(font: .avenir20())
+    let fullNameTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
+    let favoriteMovieTF = OneLineTextField(font: .avenir20(), isSecureTextEntry: false)
     let loginButton = UIButton(title: "Сохранить", titleColor: .black, backgroungColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     
     let fillImageView = AddPhotoView()
@@ -34,6 +34,15 @@ class SetupProfileVC: UIViewController {
         super.viewDidLoad()
         initView()
         setupContraints()
+        
+        fillImageView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func plusButtonTapped(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
     }
     
     private func initView(){
@@ -42,7 +51,7 @@ class SetupProfileVC: UIViewController {
     }
     
     @objc private func saveDataOnFirestore(){
-        FirestoreService.shared.saveProfileWith(id: currentUser.uid, email: currentUser.email!, username: fullNameTF.text!, avatarImageString: "nil", description: favoriteMovieTF.text!) { result in
+        FirestoreService.shared.saveProfileWith(id: currentUser.uid, email: currentUser.email!, username: fullNameTF.text!, avatarImage: fillImageView.circleImageView.image, description: favoriteMovieTF.text!) { result in
             switch  result{
             case .success(let users):
                 self.showAlert(with: "Успешно", and: "Данные сохранены)!") {
@@ -58,6 +67,16 @@ class SetupProfileVC: UIViewController {
     }
     
     
+}
+
+extension SetupProfileVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+        
+        fillImageView.circleImageView.image = image
+    }
 }
 
 extension SetupProfileVC {

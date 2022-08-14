@@ -10,11 +10,19 @@ import UIKit
 import SnapKit
 class OneLineTextField: UITextField {
     
-    convenience init(font: UIFont? = .avenir20()){
+    convenience init(font: UIFont? = .avenir20(), isSecureTextEntry: Bool?){
         self.init()
         
         self.font = font
         self.borderStyle = .none
+        self.autocapitalizationType = .none
+        
+        
+       
+        if isSecureTextEntry!{
+            self.isSecureTextEntry = true
+            
+        }
         
         var bottomView = UIView()
         bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -27,4 +35,6 @@ class OneLineTextField: UITextField {
             make.height.equalTo(1)
         }
     }
+    
+    
 }
