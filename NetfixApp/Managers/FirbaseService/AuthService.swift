@@ -61,7 +61,7 @@ class AuthService {
     
     func googleLogin(completion: @escaping (Result<User,Error>) -> Void){
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        
+
         let config = GIDConfiguration(clientID: clientID)
 
         GIDSignIn.sharedInstance.signIn(with: config, presenting: AppliactionUtility.rootViewController) {  user, error in
@@ -69,7 +69,7 @@ class AuthService {
                 completion(.failure(error))
                 return
             }
-        
+
         guard
             let authentication = user?.authentication,
             let idToken = authentication.idToken
@@ -79,7 +79,7 @@ class AuthService {
 
           let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                          accessToken: authentication.accessToken)
-        
+
         Auth.auth().signIn(with: credential) { result, error in
             guard let result = result else {
                 completion(.failure(error!))

@@ -15,7 +15,7 @@ class FirestoreService{
     let db = Firestore.firestore()
     
     private var usersRef: CollectionReference {
-        return db.collection("users")
+        return db.collection("user")
     }
     
     func saveProfileWith(id: String, email: String, username: String, avatarImage: UIImage?, description: String, completion: @escaping (Result<Users,Error>) ->Void){

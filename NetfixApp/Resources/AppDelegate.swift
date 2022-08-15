@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-import Firebase
+import FirebaseCore
 import GoogleSignIn
 import FirebaseStorage
 

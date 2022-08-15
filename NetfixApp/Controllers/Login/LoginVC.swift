@@ -144,7 +144,7 @@ class LoginVC: UIViewController {
                             self.present(mainvc, animated: true)
                         case .failure(let error):
                             self.present(SetupProfileVC(currentUser: user), animated: true)
-                            print(error)
+                            print(error.localizedDescription)
                         }
                     }
                    
