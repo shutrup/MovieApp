@@ -17,4 +17,5 @@ import CoreData
 
 ```
 ## Скрины приложения
-![launch](1.png)
+
+<img src="1.png" width="500">
